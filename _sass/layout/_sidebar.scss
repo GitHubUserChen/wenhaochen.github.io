@@ -94,10 +94,17 @@
   }
 
   img {
+    /* Make avatars square and cropped rather than circular */
     max-width: 175px;
-    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0;
 
     @include breakpoint($large) {
+      /* On large screens use a fixed square size */
+      width: 175px;
+      height: 175px;
       padding: 5px;
       border: 1px solid var(--global-border-color);
     }
